@@ -1,182 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Politique de confidentialité — Gradus</title>
+<title>Politique de confidentialité — IFMEM Prépa</title>
+<meta name="description" content="Ce que l'application IFMEM Prépa garde sur votre téléphone, ce qu'elle mesure de façon anonyme, et comment vous y opposer.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<!-- style:début -->
 <style>
-  :root { color-scheme: light dark; }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0 auto; max-width: 40rem; padding: 3rem 1.25rem 5rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 1rem; line-height: 1.65; color: #0C1F1E; background: #F4F7F7;
-  }
-  h1 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 .5rem; letter-spacing: -.02em; }
-  h2 { font-size: 1.15rem; margin: 2.5rem 0 .75rem; letter-spacing: -.01em; }
-  .maj { color: #4A5F5E; font-size: .9rem; margin: 0 0 2.5rem; }
-  .clef {
-    background: #0F5257; color: #EAF4F3; border-radius: 14px;
-    padding: 1.25rem 1.4rem; margin: 0 0 2rem;
-  }
-  .clef p { margin: 0; }
-  ul { padding-left: 1.2rem; }
-  li { margin-bottom: .4rem; }
-  a { color: #0F5257; }
-  footer {
-    margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #D3E0DF;
-    color: #4A5F5E; font-size: .9rem;
-  }
-  @media (prefers-color-scheme: dark) {
-    body { color: #E6F0EF; background: #071615; }
-    .maj, footer { color: #A9C2C0; }
-    .clef { background: #163130; }
-    footer { border-top-color: #1F3F3D; }
-    a { color: #7FD6CB; }
-  }
+:root {
+  --navy: #0D1A26; --navy-halo: #1D3A52; --teal: #12A0B4; --teal-deep: #0B7F90; --amber: #E8A03C;
+  --paper: #EDF2F4; --card: #FFFFFF; --ink: #0C1720; --ink2: #41525C; --muted: #6B7C86; --line: #DBE4E8; --glow: #E8F5F8; --dim: #8FB4BF;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--teal-deep); }
+a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+
+.entete { background: radial-gradient(1200px 600px at 30% -20%, var(--navy-halo), var(--navy)); padding: 18px 20px; }
+.marque { display: inline-flex; align-items: center; gap: 12px; color: var(--glow); text-decoration: none; font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-weight: 700; font-size: 20px; }
+.marque b { color: var(--teal); font-weight: 800; }
+.logo { width: 34px; height: 34px; border-radius: 9px; background: var(--navy-halo) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect x='38' y='42' width='32' height='13' rx='6.5' fill='%2312A0B4'/%3E%3Crect x='35' y='59' width='38' height='13' rx='6.5' fill='%2312A0B4'/%3E%3Crect x='32' y='76' width='44' height='14' rx='7' fill='%2312A0B4'/%3E%3Ccircle cx='54' cy='26' r='8' fill='%23E8A03C'/%3E%3C/svg%3E") center/cover; }
+
+.page { max-width: 720px; margin: 0 auto; padding: 40px 20px 56px; }
+.eyebrow { font-family: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-deep); margin: 0 0 10px; }
+h1 { font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-weight: 800; font-size: clamp(30px, 5vw, 42px); line-height: 1.08; letter-spacing: -0.5px; margin: 0 0 16px; text-wrap: balance; }
+h2 { font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-weight: 700; font-size: 22px; margin: 36px 0 10px; }
+.chapo { font-size: 19px; color: var(--ink2); margin: 0 0 8px; }
+.date { font-family: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace; font-size: 12.5px; color: var(--muted); margin: 0 0 8px; }
+section p, section li { color: var(--ink2); }
+section strong { color: var(--ink); font-weight: 600; }
+ul { padding-left: 22px; }
+li { margin: 4px 0; }
+.encadre { background: var(--card); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 14px 18px; margin: 18px 0; }
+.encadre p { margin: 0; }
+.encadre-titre { font-family: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-deep); margin-bottom: 6px !important; }
+.petit { font-size: 14px; color: var(--muted); }
+.a-completer { background: #FBEEDB; color: #8A5410; padding: 1px 6px; border-radius: 4px; font-family: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace; font-size: 14px; }
+
+.pied { border-top: 1px solid var(--line); padding: 22px 20px 36px; text-align: center; font-size: 13.5px; color: var(--muted); }
+.pied p { max-width: 720px; margin: 6px auto; }
+
+/* Page d'accueil */
+.hero { background: radial-gradient(1400px 800px at 30% -20%, var(--navy-halo), var(--navy)); color: var(--glow); padding: 56px 20px 64px; }
+.hero-int { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+.hero h1 { color: var(--glow); font-size: clamp(36px, 6vw, 58px); }
+.hero h1 span { color: var(--teal); }
+.hero p { color: var(--dim); font-size: 19px; max-width: 48ch; }
+.hero .eyebrow { color: var(--teal); }
+.badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; align-items: center; }
+.bouton { display: inline-block; background: var(--teal); color: #fff; text-decoration: none; font-weight: 600; padding: 13px 22px; border-radius: 12px; }
+.bouton.secondaire { background: transparent; color: var(--glow); border: 1px solid #2A4A62; }
+.tel { justify-self: center; width: min(280px, 70vw); aspect-ratio: 1080 / 2400; max-height: 560px; border-radius: 36px; overflow: hidden; border: 6px solid #1F3A50; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+.tel img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.atouts { max-width: 960px; margin: 0 auto; padding: 44px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.atout { background: var(--card); border-radius: 14px; padding: 18px; }
+.atout h3 { margin: 0 0 6px; font-size: 17px; }
+.atout p { margin: 0; color: var(--ink2); font-size: 15px; }
+@media (max-width: 720px) { .hero-int { grid-template-columns: 1fr; } .tel { order: -1; } }
 </style>
+<!-- style:fin -->
 </head>
 <body>
+<header class="entete">
+  <a class="marque" href="./">
+    <span class="logo" aria-hidden="true"></span>
+    <span>IFMEM <b>Prépa</b></span>
+  </a>
+</header>
 
-<h1>Politique de confidentialité</h1>
-<p class="maj">Application Gradus — calcul de dose &amp; entraînement IFSI<br>
-Dernière mise à jour : 4 septembre 2026</p>
+<main class="page">
+  <p class="eyebrow">Politique de confidentialité</p>
+  <h1>Ce que l'app sait de vous : presque rien.</h1>
+  <p class="chapo">IFMEM Prépa est un outil de révision qui fonctionne sur votre téléphone, sans compte et sans identifiant. Voici, sans jargon, ce qui reste chez vous, ce qui est compté de façon anonyme, et comment refuser.</p>
+  <p class="date">Dernière mise à jour : 25 septembre 2026</p>
 
-<div class="clef">
-  <p><strong>Gradus ne collecte aucune donnée personnelle.</strong> Il n'y a ni compte, ni
-  inscription, ni publicité. Tout ce que vous saisissez reste sur votre téléphone.</p>
-  <p style="margin-top:.8rem"><strong>Des statistiques d'usage anonymes</strong> sont envoyées
-  pour améliorer l'application. Elles ne portent jamais sur ce que vous saisissez, et vous pouvez
-  vous y opposer en un geste depuis les mentions légales.</p>
-</div>
+  <section>
+    <h2>Ce qui reste sur votre téléphone</h2>
+    <p>Votre progression (cours lus, meilleurs scores, épreuves blanches, questions à revoir), vos fiches favorites, vos brouillons de lettre de motivation et vos réglages sont enregistrés <strong>uniquement sur votre appareil</strong>. Ils ne sont transmis à personne : ni à l'éditeur, ni à un prestataire. Désinstaller l'application les efface.</p>
+    <p>L'application ne demande aucune permission particulière : pas d'accès aux contacts, à la localisation, à l'appareil photo ni aux fichiers.</p>
+  </section>
 
-<h2>Les données que l'application enregistre</h2>
-<p>Gradus stocke localement, dans l'espace privé de l'application sur votre appareil :</p>
-<ul>
-  <li>votre progression aux exercices (nombre de tentatives et de réussites par thème) ;</li>
-  <li>le dernier calculateur que vous avez utilisé, pour vous le reproposer ;</li>
-  <li>le fait que vous ayez lu l'avertissement d'accueil ;</li>
-  <li>le fait que l'achat unique ait été effectué.</li>
-</ul>
-<p>Ces informations ne quittent jamais l'appareil. Elles ne sont transmises à personne, pas même
-à l'éditeur de l'application. Désinstaller Gradus les efface définitivement. Vous pouvez aussi
-remettre votre progression à zéro à tout moment depuis l'écran « Progrès ».</p>
+  <section>
+    <h2>Statistiques d'usage anonymes</h2>
+    <p>Pour savoir quelles fonctions servent vraiment, l'application compte des <strong>actions</strong> : « un cours a été lu », « une série a été terminée », « la page d'achat a été affichée ». Chaque comptage contient trois choses au plus :</p>
+    <ul>
+      <li>le nom de l'action ;</li>
+      <li>un complément issu de l'application elle-même, par exemple le nom d'une matière ou une tranche de note (« entre 10 et 14 »), jamais un score précis ;</li>
+      <li>le numéro de version de l'application.</li>
+    </ul>
+    <p>Ce qui n'est <strong>jamais</strong> envoyé :</p>
+    <ul>
+      <li>aucun identifiant d'appareil, d'installation, de session ou d'utilisateur ;</li>
+      <li>aucune adresse IP : elle n'est enregistrée ni dans la base de données, ni dans les journaux du serveur, désactivés à cet effet ;</li>
+      <li>rien de ce que vous écrivez ou répondez : brouillons de lettre, réponses aux questions, scores précis.</li>
+    </ul>
+    <p>Ces comptages sont envoyés à un serveur de l'éditeur hébergé <strong>en France</strong>, sans prestataire tiers, et supprimés au bout de <strong>13 mois</strong>. Ils ne permettent pas de compter des personnes ni de reconnaître un utilisateur d'une fois sur l'autre : ils comptent des actions. Cette mesure relève de l'exemption de consentement prévue pour la mesure d'audience ; elle est active par défaut et vous pouvez vous y opposer.</p>
+    <div class="encadre">
+      <p class="encadre-titre">Pour refuser</p>
+      <p>Ouvrez <strong>Réglages</strong> (icône en haut à droite de l'accueil) et désactivez <strong>Statistiques d'usage anonymes</strong>. L'application fonctionne exactement de la même façon, et ce qui n'était pas encore envoyé est effacé.</p>
+    </div>
+  </section>
 
-<h2>Les valeurs que vous saisissez dans les calculateurs</h2>
-<p>Les volumes, durées, doses et poids que vous entrez servent uniquement à afficher le résultat
-à l'écran. <strong>Ils ne sont jamais enregistrés</strong> : ils disparaissent dès que vous
-quittez l'écran de calcul.</p>
+  <section>
+    <h2>Achat de l'accès complet</h2>
+    <p>L'accès complet est un achat unique traité par <strong>Google Play</strong>. L'éditeur ne reçoit ni vos coordonnées bancaires, ni votre nom, ni votre adresse électronique ; il ne reçoit de Google que la confirmation que l'achat existe, ce qui permet de le restaurer sur un nouvel appareil. Le traitement du paiement relève de la <a href="https://policies.google.com/privacy" rel="noopener">politique de confidentialité de Google</a>.</p>
+  </section>
 
-<h2>Statistiques d'usage — anonymes, et refusables</h2>
-<p>Gradus envoie des <strong>statistiques d'usage anonymes</strong> pour savoir ce qui sert et ce
-qu'il faut améliorer. Elles relèvent de la <strong>mesure d'audience</strong> : elles servent au
-seul éditeur de l'application, ne suivent personne d'une application à l'autre, et ne sont
-transmises ni vendues à qui que ce soit.</p>
+  <section>
+    <h2>Signaler une erreur</h2>
+    <p>Sous chaque explication, un lien « Signaler une erreur » ouvre votre application de courriel avec un message pré-rempli (identifiant de la question, version de l'app). Rien ne part sans que vous envoyiez ce message vous-même. Votre adresse nous est alors connue comme pour tout courriel ; elle sert uniquement à vous répondre et n'est ni conservée dans un fichier, ni partagée.</p>
+  </section>
 
-<p><strong>Vous pouvez vous y opposer à tout moment</strong>, depuis <em>Mentions légales et
-confidentialité</em> dans l'application. Les désactiver arrête l'envoi immédiatement et efface ce
-qui restait en attente. Aucune fonctionnalité n'en dépend : l'application marche exactement
-pareil.</p>
+  <section>
+    <h2>Vos droits</h2>
+    <p>Puisque l'application ne rattache aucune donnée à une personne, il n'existe pas de fichier vous concernant à consulter, corriger ou effacer : vos données sont sur votre téléphone, sous votre seul contrôle. Pour toute question sur cette politique, écrivez à Baumelabs (coordonnées ci-dessous). Vous pouvez aussi vous adresser à la CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>
+  </section>
 
-<h3>Ce qui est envoyé</h3>
-<p>Uniquement des actions, jamais leur contenu :</p>
-<ul>
-  <li>l'ouverture d'un calculateur, et le fait qu'un calcul ait abouti ;</li>
-  <li>l'ouverture d'une leçon ou du formulaire ;</li>
-  <li>le démarrage et la fin d'une série d'exercices ou d'un partiel blanc ;</li>
-  <li>l'affichage de l'écran de déblocage, et le fait qu'un achat ait abouti.</li>
-</ul>
-<p>Chaque envoi peut porter un seul complément : le nom technique du calculateur ou du thème
-concerné — <code>debit_perfusion</code>, <code>dilution</code>. C'est tout.</p>
+  <section>
+    <h2>Hébergement</h2>
+    <p>Les statistiques d'usage anonymes sont hébergées sur un serveur loué par Baumelabs auprès d'<strong>OVH SAS</strong> (2 rue Kellermann, 59100 Roubaix, France), situé en France. Ce site est hébergé par <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis).</p>
+  </section>
 
-<h3>Ce qui n'est jamais envoyé</h3>
-<ul>
-  <li><strong>Les valeurs que vous saisissez</strong> dans les calculateurs — volumes, durées,
-      doses, poids. Elles ne quittent jamais l'appareil, dans aucun cas.</li>
-  <li><strong>Vos réponses aux exercices</strong>, vos scores, vos notes de partiel blanc.</li>
-  <li>Aucun identifiant stable, aucun profil : les envois ne sont rattachés à personne et ne
-      permettent pas de vous reconnaître d'une fois sur l'autre.</li>
-  <li>Aucune capture d'écran, d'appui ou de session : l'application n'envoie que les actions
-      listées ci-dessus, une par une, et rien d'automatique.</li>
-  <li><strong>Votre adresse IP</strong>, qui n'est enregistrée nulle part.</li>
-</ul>
+  <section>
+    <h2>Contact</h2>
+    <p><strong>Éditeur et responsable du traitement</strong><br>
+    Baumelabs<br>
+    735 route de Marseille, 83860 Nans-les-Pins, France<br>
+    Courriel : <a href="mailto:baumelabs@gmail.com">baumelabs@gmail.com</a></p>
+    <p>C'est à cette adresse qu'il faut écrire pour toute question sur cette politique, pour signaler une erreur dans le contenu, ou pour exercer vos droits.</p>
+    <p class="petit">Cette politique peut évoluer avec l'application ; la date en haut de page indique la version en vigueur.</p>
+  </section>
+</main>
 
-<h3>Où vont ces statistiques</h3>
-<p><strong>Aucun prestataire tiers.</strong> Les statistiques sont reçues et conservées sur un
-serveur loué par l'éditeur chez OVH, en France, et ne sont accessibles qu'à lui. Aucune régie
-publicitaire, aucun outil d'analyse commercial, aucun transfert hors de l'Union européenne.</p>
-<p><strong>Votre adresse IP n'est pas enregistrée.</strong> Le serveur la reçoit, comme tout
-serveur qui reçoit une requête, mais ne l'écrit nulle part : elle n'est ni stockée, ni journalisée.
-C'est ce qui rend l'anonymat réel plutôt qu'affiché.</p>
-<p>Les statistiques sont effacées automatiquement au bout de <strong>13 mois</strong>.</p>
-
-<h2>Fonctionnement hors ligne</h2>
-<p>Tous les calculs, tous les exercices et toutes les leçons fonctionnent sans connexion.
-L'application n'a besoin d'Internet que pour l'achat et pour les statistiques d'usage.</p>
-
-<h2>L'achat unique et Google Play</h2>
-<p>Le déblocage de l'entraînement complet passe par la facturation Google Play.</p>
-<p>Gradus demande à Google Play le prix du produit et l'état de votre achat, puis conserve
-localement une simple mention « acheté ». <strong>L'éditeur de Gradus ne reçoit ni votre
-identité, ni votre adresse, ni vos coordonnées bancaires</strong> : le paiement est traité
-entièrement par Google, qui agit comme vendeur. Les données que Google traite à cette occasion
-relèvent de sa propre politique de confidentialité, consultable sur
-<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
-
-<h2>Ce que Gradus ne fait pas</h2>
-<ul>
-  <li>Aucune publicité, aucun traceur publicitaire.</li>
-  <li>Aucun partage ni aucune vente de données à des tiers.</li>
-  <li>Aucun accès aux contacts, à la position, aux photos, au micro ou à la caméra.</li>
-  <li>Aucune collecte de données de santé, ni les vôtres ni celles d'un patient.</li>
-</ul>
-
-<h2>Autorisations demandées</h2>
-<p>Gradus déclare deux autorisations, toutes deux requises par la bibliothèque de facturation
-Google Play : l'accès à Internet et la consultation de l'état de la connexion. Ce sont des
-autorisations dites normales — elles ne déclenchent aucune demande à l'écran et ne donnent accès
-à aucune donnée personnelle.</p>
-<p>Aucune autorisation sensible n'est demandée : ni contacts, ni position, ni stockage, ni
-photos, ni micro, ni caméra.</p>
-
-<h2>Enfants</h2>
-<p>Gradus s'adresse aux étudiants en soins infirmiers et aux professionnels. L'application n'est
-pas destinée aux enfants. Les statistiques décrites plus haut restent anonymes et sans contenu
-quel que soit l'âge de l'utilisateur.</p>
-
-<h2>Vos droits</h2>
-<p>Le RGPD vous donne des droits d'accès, de rectification et d'effacement sur vos données
-personnelles. Gradus n'en détient aucune : il n'y a donc rien à vous communiquer ni à supprimer
-à votre demande.</p>
-<p>Les données locales décrites plus haut sont sous votre seul contrôle : l'écran « Progrès »
-permet de les remettre à zéro, et la désinstallation les efface.</p>
-<p>Quant aux statistiques d'usage, elles sont anonymes et ne comportent aucun identifiant :
-elles ne peuvent pas être rattachées à vous, ni retrouvées, ni supprimées individuellement — ce
-qui est la contrepartie de leur anonymat. Vous disposez en revanche d'un
-<strong>droit d'opposition</strong>, exerçable en un geste depuis les mentions légales de
-l'application : l'envoi cesse immédiatement.</p>
-
-<h2>Avertissement d'usage</h2>
-<p>Gradus est un outil pédagogique et d'aide au calcul. Il ne remplace ni le jugement clinique,
-ni les protocoles de votre service, et ne recommande aucune conduite thérapeutique. Toute dose
-doit être vérifiée avant administration, conformément aux règles de double-contrôle en
-vigueur.</p>
-
-<h2>Modifications</h2>
-<p>Toute évolution de cette politique sera publiée sur cette page, avec une nouvelle date de mise
-à jour. Si une future version de l'application devait collecter une donnée quelconque, cela
-serait annoncé ici et dans l'application avant toute mise en service.</p>
-
-<h2>Contact</h2>
-<p>Pour toute question sur cette politique :
-<a href="mailto:baumelabs@gmail.com">baumelabs@gmail.com</a></p>
-
-<footer>
-  Éditeur : Baumelabs<br>
-  735 route de Marseille, 83860 Nans-les-Pins, France<br>
-  <a href="mailto:baumelabs@gmail.com">baumelabs@gmail.com</a><br>
-  Gradus, application Android.
+<footer class="pied">
+  <p>IFMEM Prépa — outil de révision indépendant, sans lien avec les instituts de formation. Les modalités d'admission varient d'un institut à l'autre : vérifiez la fiche officielle de l'IFMEM visé.</p>
+  <p><a href="./">Accueil</a> · <a href="confidentialite.html">Confidentialité</a></p>
 </footer>
-
 </body>
 </html>
